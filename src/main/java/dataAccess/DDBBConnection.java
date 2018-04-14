@@ -53,4 +53,17 @@ public class DDBBConnection {
         }
         return  result;
     }
+    
+    public ResultSet findAll(String table, int id){
+        Statement statement = null;
+        ResultSet result= null;
+        
+        try {
+            statement = connection.createStatement();
+            result = statement.executeQuery("SELECT * FROM "+table+" WHERE level ="+id);
+        } catch (SQLException ex) {
+            return null;
+        }
+        return  result;
+    }
 }

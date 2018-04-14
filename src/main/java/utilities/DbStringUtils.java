@@ -11,10 +11,10 @@ import java.util.StringTokenizer;
  *
  * @author Javier
  */
-public class DBStringUtils {
+public class DbStringUtils {
    
-
-    public DBStringUtils() {
+    
+    public DbStringUtils() {
     }
     
     public int [] stringToArray(String stringIn){
@@ -22,12 +22,12 @@ public class DBStringUtils {
         StringTokenizer tokenizer = new StringTokenizer(stringIn, "/");       
         int [] arrayfromstring = new int[tokenizer.countTokens()];
         for(int i = 0;tokenizer.hasMoreTokens();i++){
+            
             arrayfromstring[i] = Integer.parseInt(tokenizer.nextToken()); 
         }     
         
     return arrayfromstring;
     }
-    
     
     public String arrayToString(int [] arrayIn){
     
@@ -38,5 +38,17 @@ public class DBStringUtils {
         }
         
      return out.substring(0, out.length() - 1).trim();
+    }
+    
+    public int countAttacks(int[] arraIn){
+    
+        return arraIn.length;
+    
+    }
+    
+    public int countAttacks (String stringIn){
+    
+        StringTokenizer tokenizer = new StringTokenizer(stringIn, "/");
+        return tokenizer.countTokens();
     }
 }
