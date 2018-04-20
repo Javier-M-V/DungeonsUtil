@@ -21,52 +21,31 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package utilities;
+package controls;
 
-import java.util.StringTokenizer;
+import dataAccess.DDBBConnection;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  *
  * @author Javier
  */
-public class DbStringUtils {
-   
+public class BasicPointsController {
+       
+    private DDBBConnection db;
     
-    public DbStringUtils() {
-    }
-    
-    public static int [] stringToArray(String stringIn){
-    
-        StringTokenizer tokenizer = new StringTokenizer(stringIn, "/");       
-        int [] arrayfromstring = new int[tokenizer.countTokens()];
-        for(int i = 0;tokenizer.hasMoreTokens();i++){
-            
-            arrayfromstring[i] = Integer.parseInt(tokenizer.nextToken()); 
-        }     
+    public BasicPointsController(){
         
-    return arrayfromstring;
+        db = new DDBBConnection();
     }
     
-    public static String arrayToString(int [] arrayIn){
+    public ResultSet getBasicPoints(String classtype, int level){
     
-        String out=""; 
-        for(int i = 0; i<arrayIn.length; i++){
-            
-            out+= arrayIn[i]+"/";
-        }
-        
-     return out.substring(0, out.length() - 1).trim();
-    }
+        return db.findBasicPoints(classtype,level);
     
-    public int countAttacks(int[] arraIn){
-    
-        return arraIn.length;
-    
-    }
-    
-    public int countAttacks (String stringIn){
-    
-        StringTokenizer tokenizer = new StringTokenizer(stringIn, "/");
-        return tokenizer.countTokens();
     }
 }
