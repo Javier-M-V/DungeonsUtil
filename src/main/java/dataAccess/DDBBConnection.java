@@ -70,7 +70,6 @@ public class DDBBConnection {
             
             return null;
         }
-
         return  result;
     }
     
@@ -92,12 +91,28 @@ public class DDBBConnection {
         ResultSet result= null;
         try {
             statement = connection.createStatement();
-            result = statement.executeQuery("SELECT level,attack,s_fort,s_ref,s_vol,damage FROM "+table+" WHERE level ="+levelid);
+            result = statement.executeQuery("SELECT * ,(SELECT damage FROM "+table+"_constants) damage FROM "+table+" WHERE level ="+levelid);
+            //
+        } catch (SQLException ex) {
+            return null;
+        }       
+        return  result;   
+    }
+    
+    public ResultSet findConstants(String table){
+    
+        Statement statement = null;
+        ResultSet result= null;
+        try {
+            statement = connection.createStatement();
+            result = statement.executeQuery("SELECT * FROM "+table+"_constants");
         } catch (SQLException ex) {
             return null;
         }
-        
         return  result;
-    
     }
+    public ResultSet findRaceMods(String race){
+    
+        return null;
+    } 
 }

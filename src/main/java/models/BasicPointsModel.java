@@ -55,12 +55,13 @@ public class BasicPointsModel {
                 salvationF = basicmodelresultset.getInt(3);
                 salvationR = basicmodelresultset.getInt(4);
                 salvationV = basicmodelresultset.getInt(5);
-                baseDamage = basicmodelresultset.getInt(6);
+                baseDamage = basicmodelresultset.getInt(7);
             }catch(SQLException e){
                 e.printStackTrace();
                 System.err.println("Ha ocurrido un error en BBDD al completar el modelo"); 
             } 
-        }   
+        }
+        
     }
 
     public int getLevel() {

@@ -89,121 +89,6 @@ CREATE TABLE "rogue_spells" (
     "level_8_spells_day" INTEGER,
     "level_9_spells_day" INTEGER
 );
-CREATE TABLE "barbarian" (
-    "level"  INTEGER PRIMARY KEY NOT NULL,
-    "attack" TEXT,
-    "s_fort" INTEGER,
-    "s_ref" INTEGER,
-    "s_vol" INTEGER,
-    "level_base_skills" INTEGER,
-    "1_level_skills_factor" INTEGER,
-    "special" TEXT,
-    "money" INTEGER
-, damage INTEGER);
-CREATE TABLE "warrior" (
-    "level" INTEGER PRIMARY KEY NOT NULL,
-    "attack" TEXT,
-    "s_fort" INTEGER,
-    "s_ref" INTEGER,
-    "s_vol" INTEGER,
-    "level_base_skills" INTEGER,
-    "1_level_skills_factor" INTEGER,
-    "special" TEXT,
-    "money" INTEGER
-, damage INTEGER);
-CREATE TABLE "monk" (
-    "level" INTEGER PRIMARY KEY NOT NULL,
-    "attack" TEXT,
-    "s_fort" INTEGER,
-    "s_ref" INTEGER,
-    "s_vol" INTEGER,
-    "no_weapon_damage" INTEGER,
-    "attack_burst" TEXT,
-    "defense_bonus" INTEGER,
-    "level_base_skills" INTEGER,
-    "1_level_skills_factor" INTEGER,
-    "special" TEXT,
-    "money" INTEGER
-, damage INTEGER);
-CREATE TABLE "magician" (
-    "level" INTEGER PRIMARY KEY NOT NULL,
-    "attack" TEXT,
-    "s_fort" INTEGER,
-    "s_ref" INTEGER,
-    "s_vol" INTEGER,
-    "level_base_skills" INTEGER,
-    "1_level_skills_factor" INTEGER,
-    "special" TEXT,
-    "money" INTEGER
-, damage INTEGER);
-CREATE TABLE "sorcerer" (
-    "level" INTEGER PRIMARY KEY NOT NULL,
-    "attack" TEXT,
-    "s_fort" INTEGER,
-    "s_ref" INTEGER,
-    "s_vol" INTEGER,
-    "level_base_skills" INTEGER,
-    "1_level_skills_factor" INTEGER,
-    "special" TEXT,
-    "money" INTEGER
-, damage INTEGER);
-
-INSERT INTO SORCERER VALUES(1, '0',0,0,0,2,4,'familiar',3,4);
-CREATE TABLE "cleric" (
-    "level" INTEGER PRIMARY KEY NOT NULL,
-    "attack" TEXT,
-    "s_fort" INTEGER,
-    "s_ref" INTEGER,
-    "s_vol" INTEGER,
-    "level_base_skills" INTEGER,
-    "1_level_skills_factor" INTEGER,
-    "special" TEXT,
-    "money" INTEGER
-, damage INTEGER);
-CREATE TABLE "druid" (
-    "level" INTEGER PRIMARY KEY NOT NULL,
-    "attack" TEXT,
-    "s_fort" INTEGER,
-    "s_ref" INTEGER,
-    "s_vol" INTEGER,
-    "level_base_skills" INTEGER,
-    "1_level_skills_factor" INTEGER,
-    "special" TEXT,
-    "money" INTEGER
-, damage INTEGER);
-CREATE TABLE "rogue" (
-    "level" INTEGER PRIMARY KEY NOT NULL,
-    "attack" TEXT,
-    "s_fort" INTEGER,
-    "s_ref" INTEGER,
-    "s_vol" INTEGER,
-    "level_base_skills" INTEGER,
-    "1_level_skills_factor" INTEGER,
-    "special" TEXT,
-    "money" INTEGER
-, damage INTEGER);
-CREATE TABLE "bard" (
-    "level" INTEGER PRIMARY KEY NOT NULL,
-    "attack" TEXT,
-    "s_fort" INTEGER,
-    "s_ref" INTEGER,
-    "s_vol" INTEGER,
-    "level_base_skills" INTEGER,
-    "1_level_skills_factor" INTEGER,
-    "special" TEXT,
-    "money" INTEGER
-, damage INTEGER);
-CREATE TABLE "ranger" (
-    "level" INTEGER PRIMARY KEY NOT NULL,
-    "attack" TEXT,
-    "s_fort" INTEGER,
-    "s_ref" INTEGER,
-    "s_vol" INTEGER,
-    "level_base_skills" INTEGER,
-    "1_level_skills_factor" INTEGER,
-    "special" TEXT,
-    "money" INTEGER
-, damage INTEGER);
 CREATE TABLE "ranger_spells" (
     "level" INTEGER PRIMARY KEY NOT NULL,
     "level_0_spells_day" INTEGER,
@@ -243,17 +128,6 @@ CREATE TABLE "paladin_spells" (
     "level_8_spells_day" INTEGER,
     "level_9_spells_day" INTEGER
 );
-CREATE TABLE "paladin" (
-    "level" INTEGER PRIMARY KEY NOT NULL,
-    "attack" TEXT,
-    "s_fort" INTEGER,
-    "s_ref" INTEGER,
-    "s_vol" INTEGER,
-    "level_base_skills" INTEGER,
-    "1_level_skills_factor" INTEGER,
-    "special" TEXT,
-    "money" INTEGER
-, damage INTEGER);
 CREATE TABLE "barbarian_spells" (
     "level" INTEGER PRIMARY KEY NOT NULL,
     "level_0_spells_day" INTEGER,
@@ -267,5 +141,160 @@ CREATE TABLE "barbarian_spells" (
     "level_8_spells_day" INTEGER,
     "level_9_spells_day" INTEGER
 );
-
-INSERT INTO SORCERER VALUES();
+CREATE TABLE bard (
+    "level" INTEGER NOT NULL,
+    "attack" TEXT,
+    "s_fort" INTEGER,
+    "s_ref" INTEGER,
+    "s_vol" INTEGER,
+    "special" TEXT
+);
+CREATE TABLE barbarian (
+    "level" INTEGER NOT NULL,
+    "attack" TEXT,
+    "s_fort" INTEGER,
+    "s_ref" INTEGER,
+    "s_vol" INTEGER,
+    "special" TEXT
+);
+CREATE TABLE cleric (
+    "level" INTEGER NOT NULL,
+    "attack" TEXT,
+    "s_fort" INTEGER,
+    "s_ref" INTEGER,
+    "s_vol" INTEGER,
+    "special" TEXT
+);
+CREATE TABLE magician (
+    "level" INTEGER NOT NULL,
+    "attack" TEXT,
+    "s_fort" INTEGER,
+    "s_ref" INTEGER,
+    "s_vol" INTEGER,
+    "special" TEXT
+);
+CREATE TABLE monk (
+    "level" INTEGER NOT NULL,
+    "attack" TEXT,
+    "s_fort" INTEGER,
+    "s_ref" INTEGER,
+    "s_vol" INTEGER,
+    "no_weapon_damage" INTEGER,
+    "attack_burst" TEXT,
+    "defense_bonus" INTEGER,
+    "special" TEXT
+);
+CREATE TABLE paladin (
+    "level" INTEGER NOT NULL,
+    "attack" TEXT,
+    "s_fort" INTEGER,
+    "s_ref" INTEGER,
+    "s_vol" INTEGER,
+    "special" TEXT
+);
+CREATE TABLE ranger (
+    "level" INTEGER NOT NULL,
+    "attack" TEXT,
+    "s_fort" INTEGER,
+    "s_ref" INTEGER,
+    "s_vol" INTEGER,
+    "special" TEXT
+);
+CREATE TABLE rogue (
+    "level" INTEGER NOT NULL,
+    "attack" TEXT,
+    "s_fort" INTEGER,
+    "s_ref" INTEGER,
+    "s_vol" INTEGER,
+    "special" TEXT
+);
+CREATE TABLE sorcerer (
+    "level" INTEGER NOT NULL,
+    "attack" TEXT,
+    "s_fort" INTEGER,
+    "s_ref" INTEGER,
+    "s_vol" INTEGER,
+    "special" TEXT
+);
+CREATE TABLE warrior (
+    "level" INTEGER NOT NULL,
+    "attack" TEXT,
+    "s_fort" INTEGER,
+    "s_ref" INTEGER,
+    "s_vol" INTEGER,
+    "special" TEXT
+);
+CREATE TABLE barbarian_constants (
+    "damage" INTEGER,
+    "money" TEXT,
+    "base_skills" INTEGER,
+    "skils_factor" INTEGER
+);
+CREATE TABLE druid (
+    "level" INTEGER NOT NULL,
+    "attack" TEXT,
+    "s_fort" INTEGER,
+    "s_ref" INTEGER,
+    "s_vol" INTEGER,
+    "special" TEXT
+);
+CREATE TABLE bard_constants (
+    "damage" INTEGER,
+    "money" TEXT,
+    "base_skills" INTEGER,
+    "skills_factor" INTEGER
+);
+CREATE TABLE cleric_constants (
+    "damage" INTEGER,
+    "money" TEXT,
+    "base_skills" INTEGER,
+    "skills_factor" INTEGER
+);
+CREATE TABLE druid_constants (
+    "damage" INTEGER,
+    "money" TEXT,
+    "base_skills" INTEGER,
+    "skills_factor" INTEGER
+);
+CREATE TABLE magician_constants (
+    "damage" INTEGER,
+    "money" TEXT,
+    "base_skills" INTEGER,
+    "skills_factor" INTEGER
+);
+CREATE TABLE warrior_constants (
+    "damage" INTEGER,
+    "money" TEXT,
+    "base_skills" INTEGER,
+    "skills_factor" INTEGER
+);
+CREATE TABLE sorcerer_constants (
+    "damage" INTEGER,
+    "money" TEXT,
+    "base_skills" INTEGER,
+    "skills_factor" INTEGER
+);
+CREATE TABLE rogue_constants (
+    "damage" INTEGER,
+    "money" TEXT,
+    "base_skills" INTEGER,
+    "skills_factor" INTEGER
+);
+CREATE TABLE ranger_constants (
+    "damage" INTEGER,
+    "money" TEXT,
+    "base_skills" INTEGER,
+    "skills_factor" INTEGER
+);
+CREATE TABLE paladin_constants (
+    "damage" INTEGER,
+    "money" TEXT,
+    "base_skills" INTEGER,
+    "skills_factor" INTEGER
+);
+CREATE TABLE monk_constants (
+    "damage" INTEGER,
+    "money" TEXT,
+    "base_skills" INTEGER,
+    "skills_factor" INTEGER
+);
